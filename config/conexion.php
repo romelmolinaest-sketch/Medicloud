@@ -1,11 +1,18 @@
 <?php
 
-$servidor = "localhost";
-$usuario = "medicloud_user";
-$contrasena = "MediCloud2026!";
-$basedatos = "medicloud";
+$servidor   = getenv("MYSQLHOST");
+$usuario    = getenv("MYSQLUSER");
+$contrasena = getenv("MYSQLPASSWORD");
+$basedatos  = getenv("MYSQLDATABASE");
+$puerto     = getenv("MYSQLPORT");
 
-$conexion = new mysqli($servidor, $usuario, $contrasena, $basedatos);
+$conexion = new mysqli(
+    $servidor,
+    $usuario,
+    $contrasena,
+    $basedatos,
+    (int)$puerto
+);
 
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
