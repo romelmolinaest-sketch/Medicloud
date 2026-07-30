@@ -6,24 +6,19 @@ if (!$url) {
     die("MYSQL_URL no encontrada");
 }
 
-$partes = parse_url($url);
-
-$host = $partes["host"];
-$usuario = $partes["user"];
-$contrasena = $partes["pass"];
-$basedatos = ltrim($partes["path"], "/");
-$puerto = $partes["port"];
+$db = parse_url($url);
 
 $conexion = new mysqli(
-    $host,
-    $usuario,
-    $contrasena,
-    $basedatos,
-    $puerto
+    $db["host"],
+    $db["user"],
+    $db["pass"],
+    ltrim($db["path"], "/"),
+    $db["port"]
 );
 
 if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
+    die("Error: " . $conexion->connect_error);
 }
 
 $conexion->set_charset("utf8");
+?>
