@@ -38,7 +38,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $usuario = $resultado->fetch_assoc();
 
         // Comparar contraseña (temporalmente en texto plano)
-        if ($password == $usuario["password"]) {
+        if (password_verify($password, $usuario["password"])) {
+	   
+	    session_regenerate_id(true);
 
             $_SESSION["id"] = $usuario["id"];
             $_SESSION["nombre"] = $usuario["nombre"];
