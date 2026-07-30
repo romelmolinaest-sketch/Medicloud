@@ -1,22 +1,12 @@
 <?php
 
-$servidor   = getenv("MYSQLHOST");
-$usuario    = getenv("MYSQLUSER");
-$contrasena = getenv("MYSQLPASSWORD");
-$basedatos  = getenv("MYSQLDATABASE");
-$puerto     = getenv("MYSQLPORT");
+$servidor   = getenv("MYSQLHOST") ?: getenv("MYSQL_HOST");
+$usuario    = getenv("MYSQLUSER") ?: getenv("MYSQL_USER");
+$contrasena = getenv("MYSQLPASSWORD") ?: getenv("MYSQL_PASSWORD");
+$basedatos  = getenv("MYSQLDATABASE") ?: getenv("MYSQL_DATABASE");
+$puerto     = getenv("MYSQLPORT") ?: getenv("MYSQL_PORT");
 
-$conexion = new mysqli(
-    $servidor,
-    $usuario,
-    $contrasena,
-    $basedatos,
-    (int)$puerto
-);
-
-if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
-}
-
-$conexion->set_charset("utf8");
-?>
+echo "<pre>";
+var_dump($servidor, $usuario, $basedatos, $puerto);
+echo "</pre>";
+exit;
