@@ -1,4 +1,9 @@
 <?php
+
+function e($dato)
+{
+    return htmlspecialchars($dato, ENT_QUOTES, 'UTF-8');
+}
 session_start();
 
 if (!isset($_SESSION["nombre"])) {
@@ -7,6 +12,7 @@ if (!isset($_SESSION["nombre"])) {
 }
 
 require_once "../config/conexion.php";
+require_once "../config/security.php";
 
 // Contadores
 $medicos = $conexion->query("SELECT COUNT(*) AS total FROM medicos")->fetch_assoc()['total'];
@@ -107,7 +113,7 @@ button{
 
 Bienvenido
 
-<?php echo $_SESSION["nombre"]; ?>
+<?php echo e($_SESSION["nombre"]); ?>
 
 </h3>
 

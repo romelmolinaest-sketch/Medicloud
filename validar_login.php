@@ -10,6 +10,14 @@ session_start();
 // Conexión a la base de datos
 require_once "config/conexion.php";
 
+echo "<pre>";
+var_dump($password);
+var_dump($usuario["password"]);
+var_dump(password_verify($password, $usuario["password"]));
+echo "</pre>";
+exit();
+
+
 // Verificar que el formulario fue enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -37,10 +45,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $usuario = $resultado->fetch_assoc();
 
+echo "<pre>";
+echo "Contraseña ingresada:\n";
+var_dump($password);
+
+echo "Hash almacenado:\n";
+var_dump($usuario["password"]);
+
+echo "Resultado de password_verify:\n";
+var_dump(password_verify($password, $usuario["password"]));
+echo "</pre>";
+exit();
+
         // Comparar contraseña (temporalmente en texto plano)
-        if (password_verify($password, $usuario["password"])) {
+ if (password_verify($password, $usuario["password"])) {
 	   
-	    session_regenerate_id(true);
+      session_regenerate_id(true);
 
             $_SESSION["id"] = $usuario["id"];
             $_SESSION["nombre"] = $usuario["nombre"];
