@@ -1,5 +1,6 @@
 <?php
 
+
 // Mostrar errores (solo para desarrollo)
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -52,7 +53,6 @@ exit();
 
         // Comparar contraseña (temporalmente en texto plano)
  if (password_verify($password, $usuario["password"])) {
-	   
       session_regenerate_id(true);
 
             $_SESSION["id"] = $usuario["id"];
@@ -78,6 +78,8 @@ exit();
     }
 
 } else {
+<?php
+
 
     echo "<h2>Acceso no permitido.</h2>";
 
