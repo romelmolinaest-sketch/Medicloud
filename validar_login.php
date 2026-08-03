@@ -10,13 +10,6 @@ session_start();
 // Conexión a la base de datos
 require_once "config/conexion.php";
 
-echo "<pre>";
-var_dump($password);
-var_dump($usuario["password"]);
-var_dump(password_verify($password, $usuario["password"]));
-echo "</pre>";
-exit();
-
 
 // Verificar que el formulario fue enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
