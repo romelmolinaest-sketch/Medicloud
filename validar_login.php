@@ -39,17 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $usuario = $resultado->fetch_assoc();
 
-echo "<pre>";
-echo "Contraseña ingresada:\n";
-var_dump($password);
-
-echo "Hash almacenado:\n";
-var_dump($usuario["password"]);
-
-echo "Resultado de password_verify:\n";
-var_dump(password_verify($password, $usuario["password"]));
-echo "</pre>";
-exit();
 
         // Comparar contraseña (temporalmente en texto plano)
  if (password_verify($password, $usuario["password"])) {
