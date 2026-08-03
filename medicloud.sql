@@ -214,16 +214,16 @@ SET @OLD_AUTOCOMMIT=@@AUTOCOMMIT, @@AUTOCOMMIT=0;
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
 INSERT INTO `usuarios` VALUES
-(1,'Carlos Mendoza','carlos.mendoza@medicloud.com','Admin123','Administrador','2026-07-28 01:36:24'),
-(2,'María Torres','maria.torres@medicloud.com','Medico123','Medico','2026-07-28 01:36:24'),
-(3,'Juan Pérez','juan.perez@medicloud.com','Recep123','Recepcion','2026-07-28 01:36:24'),
-(4,'Ana Rodríguez','ana.rodriguez@medicloud.com','Medico123','Medico','2026-07-28 01:36:24'),
-(5,'Luis Herrera','luis.herrera@medicloud.com','Admin123','Administrador','2026-07-28 01:36:24'),
-(6,'Sofía Castillo','sofia.castillo@medicloud.com','Recep123','Recepcion','2026-07-28 01:36:24'),
-(7,'Pedro Sánchez','pedro.sanchez@medicloud.com','Medico123','Medico','2026-07-28 01:36:24'),
-(8,'Gabriela Ortiz','gabriela.ortiz@medicloud.com','Recep123','Recepcion','2026-07-28 01:36:24'),
-(9,'Diego Morales','diego.morales@medicloud.com','Admin123','Administrador','2026-07-28 01:36:24'),
-(10,'Valentina Ríos','valentina.rios@medicloud.com','Medico123','Medico','2026-07-28 01:36:24');
+(1,'Carlos Mendoza','carlos.mendoza@medicloud.com','$2y$12$jX6EkWhQFLgqQyybQtoxAuj3GDKULQDIRPQ8llLGC1CM633HpSW56','Administrador','2026-07-28 01:36:24'),
+(2,'María Torres','maria.torres@medicloud.com','$2y$12$OT5o3I19ikOpyE2QzT3RguaYV4K8cCglFwK.TGRF4Yv7sjYVue4DS','Medico','2026-07-28 01:36:24'),
+(3,'Juan Pérez','juan.perez@medicloud.com','$2y$12$acTRV3WC3deOXmvlxwVR3OiOxxXvLVa7k1/QMjH3pfar5oLOMdtNC','Recepcion','2026-07-28 01:36:24'),
+(4,'Ana Rodríguez','ana.rodriguez@medicloud.com','$2y$12$OT5o3I19ikOpyE2QzT3RguaYV4K8cCglFwK.TGRF4Yv7sjYVue4DS','Medico','2026-07-28 01:36:24'),
+(5,'Luis Herrera','luis.herrera@medicloud.com','$2y$12$jX6EkWhQFLgqQyybQtoxAuj3GDKULQDIRPQ8llLGC1CM633HpSW56','Administrador','2026-07-28 01:36:24'),
+(6,'Sofía Castillo','sofia.castillo@medicloud.com','$2y$12$acTRV3WC3deOXmvlxwVR3OiOxxXvLVa7k1/QMjH3pfar5oLOMdtNC','Recepcion','2026-07-28 01:36:24'),
+(7,'Pedro Sánchez','pedro.sanchez@medicloud.com','$2y$12$OT5o3I19ikOpyE2QzT3RguaYV4K8cCglFwK.TGRF4Yv7sjYVue4DS','Medico','2026-07-28 01:36:24'),
+(8,'Gabriela Ortiz','gabriela.ortiz@medicloud.com','$2y$12$acTRV3WC3deOXmvlxwVR3OiOxxXvLVa7k1/QMjH3pfar5oLOMdtNC','Recepcion','2026-07-28 01:36:24'),
+(9,'Diego Morales','diego.morales@medicloud.com','$2y$12$jX6EkWhQFLgqQyybQtoxAuj3GDKULQDIRPQ8llLGC1CM633HpSW56','Administrador','2026-07-28 01:36:24'),
+(10,'Valentina Ríos','valentina.rios@medicloud.com','$2y$12$OT5o3I19ikOpyE2QzT3RguaYV4K8cCglFwK.TGRF4Yv7sjYVue4DS','Medico','2026-07-28 01:36:24');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -239,3 +239,5 @@ SET AUTOCOMMIT=@OLD_AUTOCOMMIT;
 /*M!100616 SET NOTE_VERBOSITY=@OLD_NOTE_VERBOSITY */;
 
 -- Dump completed on 2026-07-29 21:14:45
+
+

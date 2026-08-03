@@ -1,5 +1,13 @@
 <?php
 
+session_set_cookie_params([
+    'lifetime' => 0,
+    'path' => '/',
+    'secure' => true,
+    'httponly' => true,
+    'samesite' => 'Strict'
+]);
+
 // Mostrar errores (solo para desarrollo)
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
